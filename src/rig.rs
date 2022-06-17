@@ -39,7 +39,7 @@ impl<H: Handedness> CameraRig<H> {
     }
 
     pub fn update(&mut self, delta_time_seconds: f32) -> Transform<H> {
-        let mut parent_transform = Transform::IDENTITY();
+        let mut parent_transform = Transform::identity();
         
         for driver in self.drivers.iter_mut() {
             let transform = driver.update(
@@ -79,7 +79,7 @@ impl<H: Handedness> CameraRigBuilder<H> {
     pub fn build(self) -> CameraRig<H> {
         let mut rig = CameraRig {
             drivers: self.drivers,
-            final_transform: Transform::IDENTITY(),
+            final_transform: Transform::identity(),
             phantom: PhantomData,
         };
 

@@ -37,7 +37,7 @@ impl<H: Handedness> Transform<H> {
         self.rotation * H::forward()
     }
 
-    pub fn IDENTITY() -> Transform<H> {
+    pub fn identity() -> Transform<H> {
         Transform {
             position: Vector3::zero(),
             rotation: Quaternion::one(),
